@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>Cálculo de Consumo de Energia e Água</h1>
+<h1>CalcConsumo de Energia e Água</h1>
 
 <p>Informe os valores dos medidores na entrada e saída:</p>
 
@@ -56,6 +56,7 @@ function calcular() {
   <p>custo_agua é o preço do m³ de água (valor da conta de água dividido pela quantidade de água consumida na conta).</p>
   
   <p> *Valor total:* R$ valor_energia + R$ valor_agua = <b>*R$ valor_total*</b></p>
+  <button class="btn" onclick="copiarConteudo()">Copiar</button>
   `
  
   texto = texto.replaceAll("energia_saida", energia_saida)
@@ -77,6 +78,20 @@ function calcular() {
   resultado.innerHTML = texto
 
 }
+async function copiarConteudo() {
+
+  let texto = document.getElementById('resultado').innerHTML;
+  try {
+    await navigator.clipboard.writeText(texto);
+    console.log('Content copied to clipboard');
+    /* Resolved - text copied to clipboard successfully */
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+    /* Rejected - text failed to copy to the clipboard */
+  }
+}
+
+
 </script>
 
 </body>
