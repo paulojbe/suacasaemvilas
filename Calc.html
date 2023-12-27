@@ -45,17 +45,17 @@ function calcular() {
   let texto = `
   <p>O valor do consumo de energia e água ficou assim:</p>
   
-  <p><b>Energia:</b></p>
+  <p><b>*Energia:*</b></p>
   <p> energia_saida (saída) - energia_entrada (entrada) = energia_consumida KWh</p>
   <p> energia_consumida KWh x custo_energia = R$ valor_energia</p>
   <p>custo_energia é o preço do KWh (valor da conta de energia dividido pela quantidade de KWh consumidos na conta).</p>
 
-  <p><b>Água:</b></p>
+  <p><b>*Água:*</b></p>
   <p> agua_saida (saída) - agua_entrada (entrada) = agua_consumida m³</p>
   <p> agua_consumida m³ x custo_agua = R$ valor_agua</p>
   <p>custo_agua é o preço do m³ de água (valor da conta de água dividido pela quantidade de água consumida na conta).</p>
   
-  <p> Valor total: R$ valor_energia + R$ valor_agua = <b>R$ valor_total</b></p>
+  <p> *Valor total:* R$ valor_energia + R$ valor_agua = <b>*R$ valor_total*</b></p>
   `
  
   texto = texto.replaceAll("energia_saida", energia_saida)
