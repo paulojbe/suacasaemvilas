@@ -62,17 +62,17 @@ function calcular() {
   texto = texto.replaceAll("energia_entrada", energia_entrada)
   texto = texto.replaceAll("energia_consumida", energia_consumida)
   
-  texto = texto.replaceAll("custo_energia", custo_energia)
-  texto = texto.replaceAll("valor_energia", valor_energia)
+  texto = texto.replaceAll("custo_energia", custo_energia.toLocaleString('pt-BR'))
+  texto = texto.replaceAll("valor_energia", valor_energia.toLocaleString('pt-BR'))
   
   texto = texto.replaceAll("agua_saida", agua_saida)
   texto = texto.replaceAll("agua_entrada", agua_entrada)
   texto = texto.replaceAll("agua_consumida", agua_consumida)
   
-  texto = texto.replaceAll("custo_agua", custo_agua)
-  texto = texto.replaceAll("valor_agua", valor_agua)
+  texto = texto.replaceAll("custo_agua", custo_agua.toLocaleString('pt-BR'))
+  texto = texto.replaceAll("valor_agua", valor_agua.toLocaleString('pt-BR'))
   
-  texto = texto.replaceAll("valor_total", valor_total)
+  texto = texto.replaceAll("valor_total", valor_total.toLocaleString('pt-BR'))
 
   resultado.innerHTML = texto
 
