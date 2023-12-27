@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Cálculo de Consumo de Energia e Água</h1>
+
+<p>Informe os valores dos medidores na entrada e saída:</p>
+
+<h2>Saída</h2>
+<p>Energia: <input type="text" id="energia_saida"/></p>
+<p>Água: <input type="text" id="agua_saida"/></p>
+<h2>Entrada</h2>
+<p>Energia: <input type="text" id="energia_entrada"/></p>
+<p>Água: <input type="text" id="agua_entrada"/></p>
+
+<button onclick="calcular()">Calcular!</button>
+
+<div id="resultado"></div>
+
+
+
+<script>
+function calcular() {
+  
+  let custo_energia = 1.42 
+  let custo_agua = 17.75
+  
+  let energia_entrada = document.getElementById("energia_entrada").value;
+  let energia_saida = document.getElementById("energia_saida").value;
+  let agua_entrada = document.getElementById("agua_entrada").value;
+  let agua_saida = document.getElementById("agua_saida").value;
+  let resultado = document.getElementById("resultado");
+  
+  
+  let energia_consumida = energia_saida - energia_entrada
+  let agua_consumida = agua_saida - agua_entrada
+  
+  let valor_energia = energia_consumida * custo_energia
+  let valor_agua = agua_consumida * custo_agua
+  
+  let valor_total = valor_agua + valor_energia
+  
+  /**let texto = "<p>Teste!</p>"**/
+  
+  let texto = `
+  <p>O valor do consumo de energia e água ficou assim:</p>
+  
+  <p><b>Energia:</b></p>
+  <p> energia_saida (saída) - energia_entrada (entrada) = energia_consumida KWh</p>
+  <p> energia_consumida KWh x custo_energia = R$ valor_energia</p>
+  <p>custo_energia é o preço do KWh (valor da conta de energia dividido pela quantidade de KWh consumidos na conta).</p>
+
+  <p><b>Água:</b></p>
+  <p> agua_saida (saída) - agua_entrada (entrada) = agua_consumida m³</p>
+  <p> agua_consumida m³ x custo_agua = R$ valor_agua</p>
+  <p>custo_agua é o preço do m³ de água (valor da conta de água dividido pela quantidade de água consumida na conta).</p>
+  
+  <p> Valor total: R$ valor_energia + R$ valor_agua = <b>R$ valor_total</b></p>
+  `
+ 
+  texto = texto.replaceAll("energia_saida", energia_saida)
+  texto = texto.replaceAll("energia_entrada", energia_entrada)
+  texto = texto.replaceAll("energia_consumida", energia_consumida)
+  
+  texto = texto.replaceAll("custo_energia", custo_energia)
+  texto = texto.replaceAll("valor_energia", valor_energia)
+  
+  texto = texto.replaceAll("agua_saida", agua_saida)
+  texto = texto.replaceAll("agua_entrada", agua_entrada)
+  texto = texto.replaceAll("agua_consumida", agua_consumida)
+  
+  texto = texto.replaceAll("custo_agua", custo_agua)
+  texto = texto.replaceAll("valor_agua", valor_agua)
+  
+  texto = texto.replaceAll("valor_total", valor_total)
+
+  resultado.innerHTML = texto
+
+}
+</script>
+
+</body>
+</html>
