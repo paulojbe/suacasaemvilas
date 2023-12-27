@@ -16,6 +16,7 @@
 <button onclick="calcular()">Calcular!</button>
 
 <div id="resultado"></div>
+<div id="btn_copiar"></div>
 
 
 
@@ -30,6 +31,7 @@ function calcular() {
   let agua_entrada = document.getElementById("agua_entrada").value;
   let agua_saida = document.getElementById("agua_saida").value;
   let resultado = document.getElementById("resultado");
+  let btn_copiar = document.getElementById("btn_copiar")
   
   
   let energia_consumida = energia_saida - energia_entrada
@@ -56,7 +58,6 @@ function calcular() {
   <p>custo_agua é o preço do m³ de água (valor da conta de água dividido pela quantidade de água consumida na conta).</p>
   
   <p> *Valor total:* R$ valor_energia + R$ valor_agua = <b>*R$ valor_total*</b></p>
-  <button class="btn" onclick="copiarConteudo()">Copiar</button>
   `
  
   texto = texto.replaceAll("energia_saida", energia_saida)
@@ -76,6 +77,9 @@ function calcular() {
   texto = texto.replaceAll("valor_total", valor_total.toLocaleString('pt-BR'))
 
   resultado.innerHTML = texto
+  btn_copiar.innerHTML = '<button class="btn" onclick="copiarConteudo()">Copiar</button>'
+
+  copy
 
 }
 async function copiarConteudo() {
@@ -86,7 +90,7 @@ async function copiarConteudo() {
     console.log('Content copied to clipboard');
     /* Resolved - text copied to clipboard successfully */
   } catch (err) {
-    console.error('Failed to copy: ', err);
+    console.error('Failed to copy to clipboard: ', err);
     /* Rejected - text failed to copy to the clipboard */
   }
 }
