@@ -80,7 +80,7 @@ function calcular() {
 }
 async function copiarConteudo() {
 
-  let texto = document.getElementById('resultado').innerHTML;
+  let texto = document.getElementById('resultado').innerText;
   try {
     await navigator.clipboard.writeText(texto);
     console.log('Content copied to clipboard');
